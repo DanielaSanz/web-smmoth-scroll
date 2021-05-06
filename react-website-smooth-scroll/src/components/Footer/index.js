@@ -1,4 +1,5 @@
 import React from 'react';
+import {animateScroll as scroll } from 'react-scroll';
 import { 
     FaInstagram,
     FaFacebook,
@@ -24,6 +25,11 @@ import {
 
 //href: poner url de social media
 const Footer = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    };
+
     return (
         <>
             <FooterContainer>
@@ -66,7 +72,7 @@ const Footer = () => {
                     </FooterLinksContainer>
                     <SocialMedia>
                         <SocialMediaWrap>
-                            <SocialLogo to='/'>Marla</SocialLogo>
+                            <SocialLogo to='/' onClick={toggleHome} >Marla</SocialLogo>
                             <WebsiteRights>
                                 Marla © {new Date().getFullYear()} All rights reserved.
                             </WebsiteRights>
